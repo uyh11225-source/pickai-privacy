@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PICKAI 개인정보처리방침</title>
+  <meta name="description" content="픽AI(PICKAI) Android 앱 개인정보처리방침 — com.marketlens.chartlens" />
+  <link rel="canonical" href="https://uyh11225-source.github.io/pickai-privacy/privacy-policy.html" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+      background: #050510;
+      color: #f5f5f7;
+      line-height: 1.7;
+      margin: 0;
+      padding: 24px 16px 48px;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    .brand { font-size: 13px; color: #a1a1aa; letter-spacing: 0.04em; margin-bottom: 8px; }
+    h1 { font-size: 28px; margin: 0 0 8px; font-weight: 700; }
+    .meta { color: #a1a1aa; font-size: 14px; margin-bottom: 32px; }
+    h2 { font-size: 18px; margin: 28px 0 10px; font-weight: 700; }
+    p, li { font-size: 15px; color: #d4d4d8; }
+    ul { padding-left: 20px; }
+    a { color: #60a5fa; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code { font-size: 13px; color: #e4e4e7; }
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #27272a;
+      font-size: 14px;
+      color: #a1a1aa;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">PICKAI · 픽AI</div>
+    <h1>PICKAI 개인정보처리방침</h1>
+    <p class="meta">
+      앱 패키지: com.marketlens.chartlens<br />
+      시행일: 2026년 10월 26일<br />
+      문의: <a href="mailto:uyh00001@gmail.com">uyh00001@gmail.com</a><br />
+      공개 URL: <a href="https://uyh11225-source.github.io/pickai-privacy/privacy-policy.html">https://uyh11225-source.github.io/pickai-privacy/privacy-policy.html</a>
+    </p>
+
+    <p>
+      픽AI(PICKAI, 이하 “서비스”)는 주식·차트 정보 조회, AI 분석, 오늘의 PICK, 포인트·멤버십, 투자 부적 생성 등의 기능을 제공하는 모바일 앱입니다.
+      본 방침은 Google Play에 배포되는 픽AI 앱과 이 앱이 이용하는 픽AI API 서버(예: <code>pickai-api.duckdns.org</code>)를 기준으로 작성되었습니다.
+    </p>
+
+    <h2>1. 운영자 및 개인정보 문의처</h2>
+    <p>
+      서비스 운영자: 픽AI<br />
+      개인정보 문의·열람·정정·삭제 요청: <a href="mailto:uyh00001@gmail.com">uyh00001@gmail.com</a><br />
+      <a href="contact.html">문의하기 페이지</a>
+    </p>
+
+    <h2>2. 처리하는 개인정보와 목적</h2>
+    <ul>
+      <li><strong>회원 인증·계정 관리:</strong> Google 또는 네이버 소셜 로그인, 세션 유지, 계정 삭제 처리</li>
+      <li><strong>서비스 제공:</strong> 관심종목, AI 분석 기록, 오늘의 PICK 열람, 포인트·멤버십, 투자 부적</li>
+      <li><strong>유료 결제:</strong> Google Play 인앱결제 검증 및 포인트·구독 혜택 반영</li>
+      <li><strong>보안·부정 이용 방지:</strong> 웰컴 포인트 중복 지급 방지(설치·소셜 계정 식별자 해시)</li>
+      <li><strong>고객 문의:</strong> 이메일 등을 통한 문의 대응</li>
+    </ul>
+    <p>서비스는 소셜 로그인 제공자의 비밀번호를 수집·저장하지 않습니다.</p>
+
+    <h2>3. 회원가입 및 로그인</h2>
+    <p>
+      이용자는 Google 또는 네이버 계정으로 로그인할 수 있습니다. 로그인 시 앱은 픽AI API 서버와 통신하고,
+      서버는 자체 SQLite 데이터베이스에 계정·세션 정보를 저장합니다(코드베이스상 Supabase·Firebase Auth 미사용).
+    </p>
+    <p>로그인 과정에서 처리될 수 있는 정보는 다음과 같습니다.</p>
+    <ul>
+      <li>소셜 제공자(Google/Naver), 제공자 사용자 식별자</li>
+      <li>이메일, 닉네임(표시명), 프로필 이미지 URL(제공·동의한 경우)</li>
+      <li>서버 발급 세션 토큰(앱 보안 저장소에 보관, 서버에 세션 레코드 저장)</li>
+      <li>웰컴 포인트 중복 방지용 <code>installationId</code>(앱이 생성·전송 시): 원문은 저장하지 않고 HMAC 해시(<code>installation_id_hash</code>)로 처리할 수 있음</li>
+    </ul>
+    <p>네이버 로그인 이용 시, 회원 탈퇴 시 연동 해제를 위해 네이버 액세스 토큰을 서버에 저장할 수 있습니다.</p>
+
+    <h2>4. AI 분석·차트 이미지·오늘의 PICK</h2>
+    <ul>
+      <li>
+        <strong>종목 AI 전망·텍스트 분석:</strong> 종목 코드·종목명·시장·시세·캔들·지표 등 분석에 필요한 시장 데이터가
+        서버를 통해 OpenAI API로 전송될 수 있습니다. 분석 결과 요약은 <code>analysis_history</code> 등 서버 DB에 저장될 수 있습니다.
+      </li>
+      <li>
+        <strong>차트 이미지 AI 분석(이용자가 촬영·선택한 경우):</strong> 이미지(base64), 종목·봉 주기·가격 관련 정보가
+        요청 처리를 위해 서버를 경유해 OpenAI API로 전송됩니다. 코드상 차트 이미지 파일을 서버 디스크에 장기 보관하는 저장 로직은
+        투자 부적과 달리 전용 영구 저장 경로가 없으며, 분석 결과 텍스트는 분석 기록에 포함될 수 있습니다.
+      </li>
+      <li>
+        <strong>오늘의 PICK:</strong> 카테고리 열람 시 포인트 차감·열람 권한 확인을 위해 서버 API(<code>/today-pick/access</code>)를 호출합니다.
+        포인트 거래·분석 유형 메타데이터가 서버에 기록됩니다.
+      </li>
+    </ul>
+    <p>서버 구현상 OpenAI 요청에 이메일·닉네임·내부 userId·결제 정보를 넣지 않도록 처리합니다(분석 프롬프트·API 계약 기준).</p>
+
+    <h2>5. 관심종목·분석 기록·로컬 저장</h2>
+    <ul>
+      <li><strong>관심종목:</strong> 서버 DB <code>favorites</code>에 종목 코드 등 저장</li>
+      <li><strong>AI 분석 기록:</strong> 서버 DB <code>analysis_history</code>에 분석 유형·종목·결과 요약·포인트 비용 등 저장</li>
+      <li><strong>최근 본 종목·일부 캐시:</strong> 앱 내부 저장소(AsyncStorage 등)에 로컬 저장될 수 있으며, 서버 DB에 동일 항목이 별도 저장되지 않을 수 있음</li>
+      <li><strong>로컬 알림:</strong> 이용자가 설정한 조건 알림은 기기에서 예약·표시되며, 알림 문구에 종목명 등이 포함될 수 있음(서버 푸시 대신 로컬 알림 사용)</li>
+    </ul>
+
+    <h2>6. 포인트·결제·멤버십</h2>
+    <ul>
+      <li>포인트 지갑·거래·예약: 서버 DB(<code>point_wallet</code>, <code>point_transactions</code>, <code>point_reservations</code>)</li>
+      <li>Google Play 인앱결제: 앱은 <code>react-native-iap</code>로 구매 후, 서버가 Google Play Developer API로 검증합니다.
+        <code>billing_purchases</code>에 상품 ID, purchaseToken, orderId 등이 저장될 수 있습니다.</li>
+      <li>멤버십 플랜: 사용자 레코드의 <code>plan</code>(FREE/PRO) 등으로 관리</li>
+    </ul>
+    <p>코드베이스에서 RevenueCat 등 별도 결제 중개 SDK는 확인되지 않았습니다.</p>
+
+    <h2>7. 투자 부적(이미지 생성)</h2>
+    <p>
+      이용 시 포인트가 차감되고, OpenAI Images API로 생성된 이미지가 서버 디스크에 사용자별 경로로 저장되며,
+      DB <code>investment_talismans</code>에 이미지 URL·생성 상태·포인트 거래 연결 정보가 기록됩니다.
+    </p>
+
+    <h2>8. 시세·종목 데이터</h2>
+    <p>
+      금융위원회 등 공개 API·제3자 시세 데이터를 조회합니다. 조회 시 이용자 개인을 식별하는 정보를 시세 제공자에게
+      전송하지 않는 구조를 목표로 합니다(종목 코드·시장 조회 중심).
+    </p>
+
+    <h2>9. 자동 수집·로그·분석 SDK</h2>
+    <ul>
+      <li>앱 코드에서 Firebase Analytics, Sentry, Amplitude, RevenueCat 등 상용 분석·크래시 SDK 의존성은 확인되지 않았습니다.</li>
+      <li>서버·운영 환경에서는 오류 대응·보안을 위해 접근 로그, 애플리케이션 로그가 생성될 수 있습니다(구체 보관 기간·IP 수집 범위는 서버·호스팅 설정에 따름 — 운영자 확인 필요).</li>
+      <li>관리자 기능 사용 시 IP·User-Agent가 관리자 감사 로그에 기록될 수 있습니다(일반 이용자 대상 기능 아님).</li>
+    </ul>
+
+    <h2>10. 앱 권한(Android)</h2>
+    <p>앱 매니페스트에 선언된 주요 권한은 다음과 같습니다(실제 사용 기능에 따라 요청).</p>
+    <ul>
+      <li><strong>INTERNET:</strong> API 통신</li>
+      <li><strong>CAMERA:</strong> 차트 촬영·분석(이용 시)</li>
+      <li><strong>com.android.vending.BILLING:</strong> Google Play 결제</li>
+      <li><strong>POST_NOTIFICATIONS:</strong> 로컬 조건 알림</li>
+      <li><strong>VIBRATE, SCHEDULE_EXACT_ALARM, SYSTEM_ALERT_WINDOW 등:</strong> 알림·예약 알림 관련</li>
+    </ul>
+    <p>매니페스트에서 READ_MEDIA_IMAGES·READ_CONTACTS 등은 제거(<code>tools:node="remove"</code>)된 항목이 있습니다. 갤러리 선택 방식은 앱·OS 버전별 구현을 따릅니다.</p>
+
+    <h2>11. 처리 위탁·제3자 제공·국외 이전</h2>
+    <ul>
+      <li><strong>Google:</strong> Google 로그인, Google Play 결제·검증</li>
+      <li><strong>네이버:</strong> 네이버 로그인·연동 해제</li>
+      <li><strong>OpenAI:</strong> AI 텍스트·이미지 분석·투자 부적 이미지 생성 — 요청 데이터는 OpenAI 정책 및 인프라에 따라 <strong>국외에서 처리될 수 있습니다</strong></li>
+      <li><strong>시세·금융 데이터 제공자:</strong> 종목·시세 조회</li>
+      <li><strong>클라우드 VPS:</strong> 픽AI API 서버 및 SQLite DB 운영(물리적 위치·수탁 계약서는 운영자 확인 필요)</li>
+    </ul>
+    <p>이용자 개인정보를 제3자에게 판매하지 않습니다. 법령상 의무 또는 이용자 동의가 있는 경우에만 제공합니다.</p>
+
+    <h2>12. 보유 기간 및 파기</h2>
+    <ul>
+      <li>회원 정보·관심종목·분석 기록·포인트·구매 검증·투자 부적·세션: <strong>회원 탈퇴(계정 삭제) 시</strong> 서버에서 해당 사용자 행 및 CASCADE 연관 데이터 삭제(구현: <code>DELETE FROM users</code> 등)</li>
+      <li>웰컴 포인트 중복 방지: <code>welcome_bonus_social_claims</code>, <code>welcome_bonus_installation_claims</code> 등에 제공자·해시만 유지될 수 있음(이메일·닉네임 미포함)</li>
+      <li>기기 로컬 데이터: 앱 삭제·데이터 삭제 시 제거</li>
+      <li>Google Play의 결제·구독 기록: Google이 보관 — 앱 계정 삭제만으로 Play 구독이 자동 해지되지 않을 수 있음</li>
+    </ul>
+    <p>관계 법령에 따른 보관 의무가 있는 경우 해당 기간 보관할 수 있습니다(구체 법령별 보관 항목·기간은 운영·법무 확인 필요).</p>
+
+    <h2>13. 개인정보 보호 조치</h2>
+    <ul>
+      <li>HTTPS 전송, 세션 토큰·API 키의 서버 측 보관</li>
+      <li>OAuth 클라이언트 시크릿 등 비밀키를 앱에 포함하지 않음</li>
+      <li>서버 접근 권한 제한(운영 정책)</li>
+    </ul>
+
+    <h2>14. 이용자 권리</h2>
+    <p>
+      이용자는 개인정보 열람·정정·삭제·처리 정지를 요청할 수 있습니다.
+      계정 삭제는 앱 <strong>MY → 설정 → 계정 삭제</strong> 또는
+      <a href="account-deletion.html">계정 및 데이터 삭제 안내</a>를 참고해 주세요.
+    </p>
+
+    <h2>15. 회원 탈퇴 및 계정 삭제</h2>
+    <p>
+      삭제 절차·삭제·유지 데이터 범위는
+      <a href="account-deletion.html">계정 및 데이터 삭제 안내</a>에 따릅니다.
+      앱 접속이 어려운 경우 이메일로 삭제를 요청할 수 있습니다.
+    </p>
+
+    <h2>16. 아동의 개인정보</h2>
+    <p>서비스는 만 14세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다.</p>
+
+    <h2>17. 방침 변경</h2>
+    <p>법령·서비스 변경 시 본 방침을 수정할 수 있으며, 중요한 변경은 앱 또는 본 페이지를 통해 안내합니다.</p>
+
+    <div class="footer">
+      <a href="terms.html">이용약관</a> ·
+      <a href="contact.html">문의하기</a> ·
+      <a href="account-deletion.html">계정 삭제 안내</a>
+    </div>
+  </div>
+</body>
+</html>
